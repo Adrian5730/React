@@ -1,0 +1,20 @@
+.container_image_cart{
+    width: 10%;
+    text-align: right;
+    position: relative;
+}
+
+img{
+    width: 20%;
+}
+
+span{
+    position: absolute;
+    top: 0;
+    border-radius: 11px;
+    border: 1px solid black;
+    padding: 5px;
+    right: -7px;
+    top: -6px;
+    background-color: red;
+}
