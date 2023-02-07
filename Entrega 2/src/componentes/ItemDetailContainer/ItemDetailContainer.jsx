@@ -1,31 +1,22 @@
-
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getData } from '../../utils/getData'
-import './ItemListContainer.css'
-export const ItemListContainer = () => {
+
+export const ItemDetailContainer = () => {
+    const {idProducto} = useParams()
     const [productos, setProductos] = useState([])
     const [loading, setloading] = useState(true)
-    const { idCategoria } = useParams()
+    
     useEffect(() => {
         setloading(true)
-        if (idCategoria) {
-            getData()
-                .then(response => {
-                    setProductos(response.filter(producto => producto.categoria == idCategoria))
-                })
-                .catch(error => console.log(error))
-                .finally(() => setloading(false))
-        } else {
-            getData()
-                .then(response => {
-                    setProductos(response)
-                })
-                .catch(error => console.log(error))
-                .finally(() => setloading(false))
-        }
-    }, [idCategoria])
+        getData()
+            .then(response => {
+                setProductos(response.filter(producto => producto.id == Number(idProducto)))
+            })
+            .catch(error => console.log(error))
+            .finally(() => setloading(false))
 
+    }, [idProducto])
     return (
         <div className='container-cards'>
             {loading ? <h2 className='loading'>Cargando...</h2>
@@ -48,10 +39,12 @@ export const ItemListContainer = () => {
                                 <p className="image-descriptor">{nombre}</p>
                             </button>
                         </div>
+                        <div>
+                            <p>{descripcion}</p>
+                        </div>
                     </div>
                 )
             }
         </div>
-
     )
 }
