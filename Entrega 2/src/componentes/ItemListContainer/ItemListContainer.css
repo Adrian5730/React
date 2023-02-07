@@ -1,0 +1,76 @@
+.loading {
+    color: azure;
+    text-align: center;
+    font-size: 50px;
+}
+
+.login-container {
+    background-color: whitesmoke;
+    border-radius: 15px;
+    width: 21%;
+    color: black;
+    padding: 30px;
+    margin: 40px auto;
+}
+
+.login-container input,
+.login-container button {
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.grid {
+    display: flex;
+    gap: 15px;
+    flex-flow: wrap;
+}
+
+.grid.column {
+    flex-direction: column;
+}
+
+.card {
+    flex: 1;
+}
+
+.image-descriptor {
+    font-size: 20px;
+}
+
+.image-capsula {
+    width: 100%;
+}
+
+.image {
+    margin: 0 auto;
+    display: block;
+}
+
+.container-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .input,
+    .button {
+        font-size: 18px;
+    }
+
+    .login-container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .modal-content {
+        flex-direction: column;
+        max-width: 90%;
+    }
+}
