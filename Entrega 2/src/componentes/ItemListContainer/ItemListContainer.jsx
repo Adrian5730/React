@@ -31,7 +31,7 @@ export const ItemListContainer = () => {
             {loading ? <h2 className='loading'>Cargando...</h2>
                 :
                 productos.map(({ id, nombre, codigo, descripcion }) =>
-                    <div key={codigo} className="login-container card-container">
+                    <div key={codigo} className="login-container">
                         <h1 className="title">{codigo}</h1>
                         <div className="grid">
                             <button

@@ -16,6 +16,6 @@ export const getData = () => {
     return new Promise((res, rej) => {
         setTimeout(() => {
             res(productos)
-        }, 2500)
+        }, 1000)
     })
 }
